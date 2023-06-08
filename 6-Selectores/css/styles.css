@@ -1,0 +1,92 @@
+/* SELECTORES */
+/* 
+    Selectores Simples
+        Selectores elementales
+            Selector universal -> *
+            SElector de tipo o etiqueta -> Nombre de la etiqueta
+        Selectores de atributo
+            id-> id del elemento
+            clase -> clase del elemento
+            otros atributos
+                [atributo]
+                [atributo=valor]
+                [atributos^=valor]   seleccionar los que empiezan con el valor
+                [atributo*=valor]    seleccionar los que contienen el valor
+                [atributo$=valor]    seleccionar los que terminan con el valor
+                [atributo|=valor]    seria como valor- y si no esta guion tambien
+                
+    Selectores Compuestos
+        Selectores Agrupados -> Se agrupan los selectores separados por comas y se escribe el estilo solo una vez.
+
+        Selectores Combinadores
+            Selector descendiente
+            Selector de hermano siguiente +
+            Selector de hermanos siguientes ~
+            Selector de hijo directo > -> SOLO los hijos director
+            Pseudoclases - Pseudoelementos
+
+*/
+.container > p{
+    background-color: tomato;
+}
+div .title-2{
+    /* background-color: teal; */
+}
+.text-2 + h2{
+    /* background-color: tomato; */
+}
+.text-2 ~ p{
+    /* background-color: teal; */
+}
+/* 
+.text,
+.text-2,
+.text-3,
+.text-4{
+    background-color: steelblue;
+} */
+
+
+/* *{
+    background-color: lightcoral;
+}
+h1{
+    background-color: lightcyan;
+}
+p{
+    background-color: lightgreen;
+}
+ul{
+    background-color: red;
+}
+li{
+    background-color: blue;
+} */
+/* #title{
+    background-color: lightgreen;
+}
+
+.title{
+    background-color: lightsalmon;
+}
+.text{
+    background-color: limegreen;
+} */
+/* [href]{
+    background-color: mediumorchid;
+}
+[href="https://google.com"]{
+    background-color: orangered;
+}
+[href^="color"]{
+    background-color: red;
+}
+[href*="modo"]{
+    background-color: green;
+}
+[href$="rojo"]{
+    background-color: steelblue;
+}
+[lang|="en"]{
+background-color: magenta;
+} */
