@@ -34,6 +34,47 @@
 
 body{
     background-color: #333;
+    margin: 0;
     color: #fff;
 }
 
+.container{
+    width: 200px;
+    height: 200px;
+    /* background-color: lightskyblue; */
+    background-color: #555;
+    position: relative;
+}
+.box{
+    /* background-color: lightcoral; */
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    color: #333;
+    /* position: relative; */
+    /* border-radius: 50px; */
+}
+.box-1{ 
+    background-color: lightcoral;
+    position: relative;
+    left: 150px;
+    /* Cuando el hijo vaya detras del contenedor hay k poner negativo y nada de z-index al contenedor */
+    z-index: -1;
+}
+.box-2 {
+    background-color: lightgreen;    
+    position: relative;
+    top: 50px;
+    z-index: 1;
+}
+.box-3{
+    background-color: lightseagreen;
+    position: relative;
+
+}
+
+.link{
+    /* position: absolute; */
+    background-color: lime;
+    width: 200px;
+}
