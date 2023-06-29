@@ -1,0 +1,136 @@
+/* 
+    La tipografia es la ciencia que estudia el diseño y uso de los tipos de letra
+    
+    Las fuentes son tipos específicos de letra.
+
+    Los glifos son cada uno de los dibujos que representan cada símbolo de la fuente, incluidos los espacio.
+
+    Los estilos de fuente son las modificaciones que se hacen a las fuentes, como el grosor o lo inclinación.
+
+    Familia tipográfica, son las diferentes fuentes que pertenecen a una misma fuente base.
+
+    Cuando usamos una propiedad text-* estamos afectando a un bloque completo
+    
+    Cuando utilizamos una propiedad font-* afectamos a la fuente del texto.
+
+    Fuentes predeterminados. Son las fuentes que se consideran seguras ya que son genéricas y no establecen una familia tipográfica, si no un estilo de fuente.
+        serif: Fuentes que tieen serifas (adornos en los caracteres)
+        sans-serif:  Fuentes sin serifas
+        monospace: Fuentes que tienen el mismo espaciado entre sus caracteres.
+        cursive: Fuentes que pretenden emular escritura a mano, con ligaduras y trazos fluidos.
+        fantasy: Fuentes que suelen ser decorativas.
+
+    Siempre que utilicemos fuentes no genéricas, debemos poner fuentes genéricas de fallback (respaldo)
+
+    Google Icons
+        Material Icons
+            https://fonts.googleapis.com/css?family=Material+Icons
+        Material Icons Outlined
+            https://fonts.googleapis.com/css?family=Material+Icons+Outlined
+        Material Icons Two Tone
+            https://fonts.googleapis.com/css?family=Material+Icons+Two+Tone
+        Material Icons Rounded
+            https://fonts.googleapis.com/css?family=Material+Icons+Round
+        Material Icons Sharp
+            https://fonts.googleapis.com/css?family=Material+Icons+Sharp
+        
+        Nota: Si vas a usar una grancantidad de iconos en tu web compensa usar la libreria remota 
+        Si sólo usaras unos pocos es mejor descargarlos en formato svg y itilizarlos como imágenes
+    
+    Formatos para fuentes
+        True Tupe Font (TTF) -> Fue el primer formato estandar.
+
+        Open True Type Font (OTF) -> Facilita o implementa la creación de las curvas.
+
+        Web Open Font Format (WOFF) (WOFF") -> Es un formato mucho mas ligero y mejora el rendimiento. Funciona a través de metadatos. WOFF tiene soporte total y WOFF2 no funciona en internet explorer.
+
+        Scalable Vector Graphics (SVG) -> Para efectos y animaciones sobre el texto, no es recomendable usarlo en el texto generico de la web, tiene muchos problemas.
+
+        Embedded Open Type (EOT) -> Priemer formato digital propuesto para sitios WEB y es comprimido. Se quedó como una propuesta pero no paso a ser un estandard.
+
+    Regla @font-face
+        Esta es la forma de utilizar fuentes que tenemos descargadas y que no traemos de un servidor remoto, cuando usamos google fonts, esto es lo que esta passando por detras.
+
+        La sintaxis es:
+            @font-face{
+                font-family: Nombre de la familia, se lo asignamos nosotros;
+                src: aqui pondremos dos tiopos de valores.
+                    Local() -> pondremos el nombre de la fuente para buscarla en el ordenador del usuario, de esa forma podremos evitar descargar la url() -> Si no encontramos esa fuente procederemos a descargarla.
+                    Existe otro valor, menos usado que format 
+                    format() -> Este valor lo pasaremos de forma opcional si queremos ser más específicos con la fuente que vamos a buscar a descargar, si no lo ponemos cogerá el primer formato soportado, si lo ponemos sólo usará el que hemos estableciod, y si no lo encuentra no hara nada
+        
+    Transformaciones de texto
+            Text-transform: Esta propiedad nos permite hacer transformaciones ESTÉTICAS en nuestro texto.
+            Admite los valores:
+                none: No se aplicara ninguna transformación.
+                uppercase: El texto se ondrá en mayusculas 
+                Lowercase: El texto se pondrá en minúsculas
+                capitalize: Transforma la primera letra de cada palabra en mayúscula.
+            Adornos en el texto
+                Text-decoration: Esta propiedad nos permite controar la línea que podemos poner en los textos.
+                Admite los valores:
+                    none: Elimina cualquier línea.
+                    underline: Coloca una línea bajo el texto.
+                    overline: Coloca una línea sobre el texto.
+                    line-through: Coloca una línea tachando el texto.
+
+                Text-shadow: Funciona exactamente igual que box-shadow, con la única diferencia de que no admite el valor inset ni la expansión de la sombra.
+                Los valores son: 
+                offsetX: desplazamiento horizontal.
+                offsetY: desplazamiento vertical.
+                blur: desenfoque.
+                color: coor, por defecto coge el del texto
+
+        Espaciado en fuentes y textos
+            Letter-spacing: Establece la separación entre caracteres, se puede establecer en cualquier medida valida para CSS
+           
+            word-spacing: Establece la separación entre palabras, se puede establecer en cualquier medida valida para CSS
+
+            Line-height: Establece el alto de cada línea, se puede dar una medida concreta o se puede poner un número que se multiplicara por el font size del texto al que se lo estemos aplicando. 
+            
+            Orientación del texto.
+            writing-mode: Establece la dirección del texto.
+
+
+*/
+@font-face {
+    font-family: 'Mano alzada';
+    src: local("Great Vibes"), url('../assets/fonts/GreatVibes-Regular.ttf');
+}
+
+body{
+    background-color: #333;
+    color: aliceblue;
+    font-family: sans-serif;
+    /* font-family: 'Roboto', sans-serif;
+    font-weight: 400; */
+}
+
+.text{
+    text-transform: uppercase;    
+    /* text-shadow: 3px 3px 0 red; */
+    /* word-spacing: 10px;
+    letter-spacing: 5px; */
+    line-height: 2;
+}
+
+.word-container{
+    background-color: lightcoral;
+    height: 200px;
+    text-align: center;
+}
+.word{
+    line-height: 100px;
+}
+/* .link
+{
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 2px solid #fff;
+        
+} */
+
+/* .icon{
+    font-size: 6rem;
+    fill: red;
+} */
